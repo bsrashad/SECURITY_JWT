@@ -7,6 +7,7 @@ import static com.thbs.security.user.Role.TRAINER;
 import org.springframework.boot.CommandLineRunner; // Importing CommandLineRunner interface
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
@@ -20,6 +21,7 @@ import com.thbs.security.auth.RegisterRequest;
 // When you save or update data in the database, Spring will automatically record when it happened and who did it.
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
+@EnableDiscoveryClient
 public class SecurityApplication {
 
     // Main method to run the Spring Boot application
